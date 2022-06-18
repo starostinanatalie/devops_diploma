@@ -15,6 +15,8 @@ class Weather_request():
         self.min_temp = 0
         self.max_temp = 0
         self.the_temp = 0
+        self.wind = ''
+        self.date_time = datetime.today()
 
     def request(self):
         self.raw_data = requests.get(
@@ -75,13 +77,16 @@ class Weather_request():
     def get_date_time(self):
         return datetime.fromtimestamp(self.created)
 
+    def get_weather(self):
+        self.request()
+        self.get_data()
+        self.date_time = self.get_date_time()
+        self.wind = self.convert_wind_from_degree_to_direction()
+
+
 city = "Moscow"
 weather = Weather_request(city)
-weather.request()
-weather.get_data()
-wind_direction_compass = weather.convert_wind_from_degree_to_direction()
-date_time = weather.get_date_time()
-print(wind_direction_compass)
-print(city, weather.id, weather.weather_state_name, weather.wind_degree, date_time,
+weather.get_weather()
+print(city, weather.id, weather.weather_state_name, weather.wind_degree, weather.wind, weather.date_time,
       weather.max_temp, weather.max_temp, weather.the_temp)
 print(weather.temperature, weather.weather)
