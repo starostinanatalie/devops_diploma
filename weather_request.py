@@ -2,9 +2,9 @@ import requests
 from datetime import datetime
 
 class Weather_request():
-    def __init__(self, city):
-        self.weather_key = '0622e80182c6090dc5a26b80c419177f'
-        self.username = 'starnatalie'
+    def __init__(self, city, key, username):
+        self.weather_key = key
+        self.username = username
         self.city = city
         self.temperature = 0
         self.weather = ''
@@ -15,6 +15,7 @@ class Weather_request():
         self.min_temp = 0
         self.max_temp = 0
         self.the_temp = 0
+        self.timezone = 0
         self.wind = ''
         self.date_time = datetime.today()
 
@@ -37,6 +38,7 @@ class Weather_request():
             self.min_temp = data['main']['temp_min']
             self.max_temp = data['main']['temp_max']
             self.the_temp = data['main']['temp']
+            self.timezone = data['timezone']
         else:
             print('Huston, we have a problem!')
 
@@ -75,7 +77,8 @@ class Weather_request():
             return 'N'
 
     def get_date_time(self):
-        return datetime.fromtimestamp(self.created)
+        time = self.created + self.timezone
+        return datetime.fromtimestamp(time)
 
     def get_weather(self):
         self.request()
@@ -84,8 +87,10 @@ class Weather_request():
         self.wind = self.convert_wind_from_degree_to_direction()
 
 
-city = "Moscow"
-weather = Weather_request(city)
+city = "London"
+key = 12345
+username = 12345
+weather = Weather_request(city, key, username)
 weather.get_weather()
 print(city, weather.id, weather.weather_state_name, weather.wind_degree, weather.wind, weather.date_time,
       weather.max_temp, weather.max_temp, weather.the_temp)
