@@ -2,7 +2,7 @@ import psycopg2
 import os
 from flask import render_template, Flask
 from datetime import datetime
-import postgres_request
+import database_request
 
 app = Flask(__name__)
 password = os.getenv('password')
@@ -11,7 +11,7 @@ password = os.getenv('password')
 def home_page():
     current_date_time = datetime.now()
     password = os.environ.get('dbpassword')
-    mydb = postgres_request.Postgres_connection(host="192.168.56.114", database="magazines", user="dbproduction",
+    mydb = database_request.Postgres_connection(host="192.168.56.114", database="magazines", user="dbproduction",
                                password="!@#$%Qwerty12345")
     mydb.connect_database()
     query1 = mydb.query_execute('select ar.id, ma.name, ty.type, au.author '
