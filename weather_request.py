@@ -6,26 +6,35 @@ class Weather_request():
         self.weather_key = '0622e80182c6090dc5a26b80c419177f'
         self.username = 'starnatalie'
         self.city = city
+        self.temperature = 0
+        self.weather = ''
+        self.id = 0
+        self.weather_state_name = ''
+        self.wind_degree = 0
+        self.created = 0
+        self.min_temp = 0
+        self.max_temp = 0
+        self.the_temp = 0
 
     def request(self):
         self.raw_data = requests.get(
-            f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={weather_key}&units=metric')
+            f'https://api.openweathermap.org/data/2.5/weather?q={self.city}&appid={self.weather_key}&units=metric')
         return self.raw_data
 
     def get_data(self):
         if self.raw_data.status_code == 200:
-            self.data = self.raw_data.json()
-            self.temperature = self.data['main']['temp']
-            self.weather = self.data['weather'][0]['description']
-            self.id = self.data['id']
-            self.weather_state_name = self.data['weather'][0]['main']
-            self.wind_degree = self.data['wind']['deg']
+            data = self.raw_data.json()
+            self.temperature = data['main']['temp']
+            self.weather = data['weather'][0]['description']
+            self.id = data['id']
+            self.weather_state_name = data['weather'][0]['main']
+            self.wind_degree = data['wind']['deg']
 
-            self.created = self.data['dt']
+            self.created = data['dt']
             #     applicable_date = data[0]['applicable_date']
-            self.min_temp = self.data['main']['temp_min']
-            self.max_temp = self.data['main']['temp_max']
-            self.the_temp = self.data['main']['temp']
+            self.min_temp = data['main']['temp_min']
+            self.max_temp = data['main']['temp_max']
+            self.the_temp = data['main']['temp']
         else:
             print('Huston, we have a problem!')
 
@@ -63,10 +72,16 @@ class Weather_request():
         else:
             return 'N'
 
+    def get_date_time(self):
+        return datetime.fromtimestamp(self.created)
+
 city = "Moscow"
 weather = Weather_request(city)
-print(weather.data)
+weather.request()
+weather.get_data()
 wind_direction_compass = weather.convert_wind_from_degree_to_direction()
-print(id, weather.weather_state_name, weather.wind_degree, weather.wind_direction_compass, weather.created,
+date_time = weather.get_date_time()
+print(wind_direction_compass)
+print(city, weather.id, weather.weather_state_name, weather.wind_degree, date_time,
       weather.max_temp, weather.max_temp, weather.the_temp)
 print(weather.temperature, weather.weather)
