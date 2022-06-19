@@ -1,5 +1,7 @@
 import requests
 from datetime import datetime
+import os
+from dotenv import load_dotenv
 
 class Credentials():
     def __init__(self, file):
@@ -102,9 +104,13 @@ class Weather_request():
         self.wind = self.convert_wind_from_degree_to_direction()
 
 
+load_dotenv()
+print(os.environ.get('secretUser'))
+print(os.environ.get('secretKey'))
+
 city = "London"
-key = 12345
-username = 12345
+key = os.environ.get('secretKey')
+username = os.environ.get('secretUser')
 weather = Weather_request(city, key, username)
 weather.get_weather()
 print(city, weather.id, weather.weather_state_name, weather.wind_degree, weather.wind, weather.date_time,
