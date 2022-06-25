@@ -3,21 +3,6 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 
-class Credentials():
-    def __init__(self, file):
-        self.username = ''
-        self.key = ''
-        self.password = ''
-
-    def get_username(self):
-        pass
-
-    def get_key(self):
-        pass
-
-    def get_password(self):
-        pass
-
 class Weather_request():
     def __init__(self, city, key, username):
         self.weather_key = key
