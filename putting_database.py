@@ -29,31 +29,28 @@ class Postgres_connection():
         return self.outrow
 
 load_dotenv()
-print(os.environ.get('dbuser'))
-print(os.environ.get('dbpassword'))
+username = os.environ.get('dbuser')
+password = os.environ.get('dbpassword')
 
-# username = os.environ.get('dbuser')
-# password = os.environ.get('dbpassword')
+mydb = Postgres_connection(host="cookinghelper.c5tazx38iu9z.us-east-1.rds.amazonaws.com", database="postgres",
+                           user=username, password=password)
+mydb.connect_database()
+query1 = mydb.query_execute('select ar.id, ma.name, ty.type, au.author '
+                   'from public."Articles" as ar '
+                   'inner join magazines as ma '
+                   'on ar.magazines_id = ma.id '
+                   'inner join article_types as ty '
+                   'on ar.article_type_id = ty.id '
+                   'inner join author as au '
+                   'on ar.author_id = au.id;')
+query2 = mydb.query_execute('select author from author;')
+mydb.disconnect_database()
+# for i in query1:
+#    print(i[1] + ', ' + i[2] + ', ' + i[3])
 #
-# mydb = Postgres_connection(host="192.168.56.114", database="magazines", user="dbproduction",
-#                            password="!@#$%Qwerty12345")
-# mydb.connect_database()
-# query1 = mydb.query_execute('select ar.id, ma.name, ty.type, au.author '
-#                    'from public."Articles" as ar '
-#                    'inner join magazines as ma '
-#                    'on ar.magazines_id = ma.id '
-#                    'inner join article_types as ty '
-#                    'on ar.article_type_id = ty.id '
-#                    'inner join author as au '
-#                    'on ar.author_id = au.id;')
-# query2 = mydb.query_execute('select author from author;')
-# mydb.disconnect_database()
-# # for i in query1:
-# #    print(i[1] + ', ' + i[2] + ', ' + i[3])
-# #
-# # for i in query2:
-# #    print(i[0])
-#
-# authors = {}
-# for i in range(len(query2)):
-#     authors[i] = query2[i][0]
+# for i in query2:
+#    print(i[0])
+
+authors = {}
+for i in range(len(query2)):
+    authors[i] = query2[i][0]
