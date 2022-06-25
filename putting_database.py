@@ -19,6 +19,12 @@ class Postgres_connection():
         self.cursor.close()
         self.connected.close()
 
+    def insert_table(self):
+        pass
+
+    def insert_rows(self):
+        pass
+
     def query_execute(self, query):
         self.cursor.execute(query)
         row = self.cursor.fetchone()
