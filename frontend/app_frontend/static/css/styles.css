@@ -1,0 +1,253 @@
+body {
+    background-color: #F3F5F9;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 110;
+    margin-right: 110;
+}
+
+p {
+    color: #4F4F4F;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+ul {
+    list-style: disc;
+    color: #9457EB;
+    padding-left: 16px;
+}
+
+li {
+    color: #9457EB;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color:  #FFFFFF;
+    background-color: #9457EB;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 48px;
+    color: #333333;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Contact section */
+
+.contact-section {
+    position: absolute;
+    top: 32px;
+    right: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.phone-number {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    text-decoration: none;
+}
+
+/* Experience section */
+
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 268px;
+}
+
+.my-photo {
+    margin-bottom: 24px;
+    border-radius: 50%;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.experience-description {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.my-projects-link {
+    color: #9457EB;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-line: underline;
+    margin-top: 80px;
+}
+
+.My-info-section {
+    margin-left: 72px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 33%;
+}
+
+.hello-Iam {
+    margin-bottom: 64px;
+}
+
+.profession {
+    margin-bottom: 36px;
+}
+
+.working-style {
+    margin-bottom: 96px;
+}
+
+.my-skills-title {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.calculator {
+    background-color: #FFFFFF;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-left: 36px;
+    width: 368px;
+    padding: 40px;
+}
+
+.calculator-title {
+    color: #9457EB;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.project-type-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-labels {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 16px;
+}
+
+.project-type-select {
+    color: #4F4F4F;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #9457EB;
+    margin-bottom: 32px;
+}
+
+.work-type-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.work-type-item {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+}
+
+.work-type-label {
+    color: #4F4F4F;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 16px;
+}
+
+.checkbox-calculator {
+    color: #9457EB;
+    border-color: #9457EB;
+    width: 18px;
+    height: 18px;
+    background-color: #9457EB;
+}
+.calculator-sum {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #9457EB;
+    padding-top: 16px;
+}
+
+.calculator-button-container {
+    width: 100%;
+    text-align: center;
+}
+
+.calculator-button {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #9457EB;
+    border-radius: 24px;
+    margin-top: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
