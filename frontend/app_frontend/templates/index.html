@@ -6,33 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather on Star Wars planets</title>
 
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div>Mom's Mind Portal:
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('login') }}">Login</a>
+    <div class="header">
+        <h1>
+            Weather on Star Wars planets
+        </h1>
     </div>
-        <hr>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="content" class="wrapper">
+
+        <!-- Experience section -->
+
+        <section class="experience-section">
+            <img class="my-photo" src="./img/my.JPG" alt="My photo">
+
+            <div>
+                <a href="https://www.linkedin.com/in/natalie-starostina-7b2039183/">
+                    <img src="./img/icons/linkedin-icon.svg" alt="My LinkedIn" class="icon">
+                </a>
+
+                <a href="https://www.facebook.com/profile.php?id=100008830218641">
+                    <img src="./img/icons/fb-icon.svg" alt="My Facebook" class="icon">
+                </a>
+            </div>
+
+            <div class="experience-description">
+                <p>3 готовых проекта</p>
+                <p>1 год опыта</p>
+            </div>
+
+            <div>
+                <img src="./img/icons/js-icon.svg" alt="JavaScript" class="icon">
+                <img src="./img/icons/react-icon.svg" alt="React" class="icon">
+                <img src="./img/icons/nodejs-icon.svg" alt="NodeJS" class="icon">
+            </div>
+
+            <a class="my-projects-link" href="https://github.com/starostinanatalie">Мои работы</a>
+
+        </section>
+
+
+        <!-- Calculation section -->
+
+        <section class="calculator">
+
+            <form action="#">
+                <h2 class="calculator-title">Погода</h2>
+
+
+                 <div class="calculator-button-container">
+                    <button class="calculator-button">Обновить данные</button>
+                 </div>
+            </form>
+
+        </section>
+    </div>
+
     <div id="footer">
-        {% block footer %}
         &copy; Copyright 2022 by <a href="http://momsmind.online">Mom's Mind Soft</a>.
-        {% endblock %}
+            <!-- Contact section -->
+
+        <section class="contact-section">
+            <div>
+                <a href="https://t.me/StarostinaNatalie">
+                    <img src="{{ url_for('static',filename='img/icons/telegram-icon.svg') }}" alt="I'm in Telegram" class="icon">
+                </a>
+
+                <a href="https://wa.me/79032119884">
+                    <img src="./img/icons/viber-icon.svg" alt="I'm on WhatsApp" class="icon">
+                </a>
+
+                <a href="tel">
+                    <img src="./img/icons/phone-icon.svg" alt="You can call me" class="icon">
+                </a>
+
+                <a href="tel" class="phone-number">
+                    +7(903)211-9884
+                </a>
+            </div>
+        </section>
     </div>
 </body>
 </html>

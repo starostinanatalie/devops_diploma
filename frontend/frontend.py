@@ -1,2 +1,2 @@
-from frontend import app_frontend
+from app_frontend import app_frontend
 

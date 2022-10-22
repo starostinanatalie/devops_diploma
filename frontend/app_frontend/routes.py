@@ -1,6 +1,7 @@
-from frontend import app_frontend
+from flask import render_template, flash, redirect, url_for
+from app_frontend import app_frontend
 
 @app_frontend.route('/')
 @app_frontend.route('/index')
 def index():
-    return "Hello, world!"
+    return render_template('index.html')
