@@ -24,7 +24,7 @@
         <!-- Experience section -->
 
         <section class="experience-section">
-            <img class="my-photo" src="./img/my.JPG" alt="My photo">
+            <img class="planet-photo" src="{{ url_for('static', filename='img/00.JPG') }}" alt="My photo">
 
             <div>
                 <a href="https://www.linkedin.com/in/natalie-starostina-7b2039183/">
@@ -47,8 +47,6 @@
                 <img src="./img/icons/nodejs-icon.svg" alt="NodeJS" class="icon">
             </div>
 
-            <a class="my-projects-link" href="https://github.com/starostinanatalie">Мои работы</a>
-
         </section>
 
 
@@ -68,10 +66,11 @@
         </section>
     </div>
 
-    <div id="footer">
+    <div id="footer" class="footer">
+        <div>
         &copy; Copyright 2022 by <a href="http://momsmind.online">Mom's Mind Soft</a>.
             <!-- Contact section -->
-
+        </div>
         <section class="contact-section">
             <div>
                 <a href="https://t.me/StarostinaNatalie">
@@ -79,11 +78,11 @@
                 </a>
 
                 <a href="https://wa.me/79032119884">
-                    <img src="./img/icons/viber-icon.svg" alt="I'm on WhatsApp" class="icon">
+                    <img src="{{ url_for('static', filename='img/icons/viber-icon.svg') }}" alt="I'm on WhatsApp" class="icon">
                 </a>
 
                 <a href="tel">
-                    <img src="./img/icons/phone-icon.svg" alt="You can call me" class="icon">
+                    <img src="{{ url_for('static', filename='img/icons/phone-icon.svg') }}" alt="You can call me" class="icon">
                 </a>
 
                 <a href="tel" class="phone-number">

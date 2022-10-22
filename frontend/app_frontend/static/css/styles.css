@@ -98,12 +98,14 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 384px;
+    width: 25%;
 }
 
-.my-photo {
+.planet-photo {
     margin-bottom: 24px;
     border-radius: 50%;
+    width: 360px;
+    height: 360px;
 }
 
 .icon {
@@ -118,51 +120,12 @@ h2 {
     margin-bottom: 36px;
     text-align: center;
 }
-
-.my-projects-link {
-    color: #9457EB;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    text-decoration-line: underline;
-    margin-top: 80px;
-}
-
-.My-info-section {
-    margin-left: 72px;
-    margin-right: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 33%;
-}
-
-.hello-Iam {
-    margin-bottom: 64px;
-}
-
-.profession {
-    margin-bottom: 36px;
-}
-
-.working-style {
-    margin-bottom: 96px;
-}
-
-.my-skills-title {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
 .calculator {
     background-color: #FFFFFF;
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
-    margin-left: 36px;
-    margin-right: 128px;
+    margin-left: 30px;
+    margin-right: 42px;
     width: 1024px;
     padding: 40px;
 }
@@ -173,73 +136,6 @@ h2 {
     margin-bottom: 36px;
 }
 
-.project-type-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-labels {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    color: #333333;
-    margin-bottom: 16px;
-}
-
-.project-type-select {
-    color: #4F4F4F;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 8px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #9457EB;
-    margin-bottom: 32px;
-}
-
-.work-type-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 32px;
-}
-
-.work-type-item {
-    display: flex;
-    flex-direction: row;
-    margin-top: 16px;
-}
-
-.work-type-label {
-    color: #4F4F4F;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    margin-left: 16px;
-}
-
-.checkbox-calculator {
-    color: #9457EB;
-    border-color: #9457EB;
-    width: 18px;
-    height: 18px;
-    background-color: #9457EB;
-}
-.calculator-sum {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    color: #9457EB;
-    padding-top: 16px;
-}
 
 .calculator-button-container {
     width: 100%;
@@ -265,4 +161,11 @@ h2 {
     border: none;
     cursor: pointer;
 }
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    padding: 48px;
+    justify-content: space-between;
+    position: relative;
 }
