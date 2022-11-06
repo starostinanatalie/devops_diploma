@@ -91,7 +91,7 @@ class Weather_request():
 
 load_dotenv()
 
-city = "London"
+city = "Moscow"
 key = os.environ.get('secretKey')
 username = os.environ.get('secretUser')
 weather = Weather_request(city, key, username)

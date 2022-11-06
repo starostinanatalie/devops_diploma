@@ -35,7 +35,6 @@ h3 {
     font-size: 24px;
     line-height: 24px;
     color:  #FFFFFF;
-    background-color: #9457EB;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 4px;
@@ -48,7 +47,7 @@ h1 {
     font-weight: bold;
     font-size: 36px;
     line-height: 36px;
-    color: #333333;
+    color: #318CE7;
 }
 
 h2 {
@@ -131,11 +130,14 @@ h2 {
 }
 
 .calculator-title {
-    color: #9457EB;
     text-align: center;
     margin-bottom: 36px;
 }
 
+.table {
+    color: #318CE7;
+    text-align: center;
+}
 
 .calculator-button-container {
     width: 100%;
@@ -150,7 +152,7 @@ h2 {
     line-height: 24px;
     text-align: center;
     color: #FFFFFF;
-    background: #9457EB;
+    background: #318CE7;
     border-radius: 24px;
     margin-top: 32px;
     padding-top: 12px;
