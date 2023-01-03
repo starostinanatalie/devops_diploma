@@ -93,7 +93,7 @@ h2 {
 
 /* Experience section */
 
-.experience-section {
+.select-planet-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +107,18 @@ h2 {
     height: 360px;
 }
 
+.select-planet {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #333333;
+    border: none;
+    text-decoration: none;
+    background-color: #F3F5F9;
+}
+
 .icon {
     width: 24px;
     height: 24px;
@@ -114,12 +126,12 @@ h2 {
     margin-right: 12px;
 }
 
-.experience-description {
+.planet-description {
     margin-top: 36px;
     margin-bottom: 36px;
     text-align: center;
 }
-.calculator {
+.weather-table {
     background-color: #FFFFFF;
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
@@ -129,22 +141,24 @@ h2 {
     padding: 40px;
 }
 
-.calculator-title {
+.weather-table-title {
     text-align: center;
     margin-bottom: 36px;
+    font-size: 20px;
+    color: #318CE7;
 }
 
 .table {
-    color: #318CE7;
+    color: #333333;
     text-align: center;
 }
 
-.calculator-button-container {
+.weather-button-container {
     width: 100%;
     text-align: center;
 }
 
-.calculator-button {
+.weather-button {
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;

@@ -23,11 +23,15 @@
 
         <!-- Experience section -->
 
-        <section class="experience-section">
+        <section class="select-planet-section">
             <img class="planet-photo" src="{{ url_for('static', filename='img/00.JPG') }}" alt="My photo">
 
-            <div class="experience-description">
-                <h2>Mars</h2>
+            <div class="planet-description">
+                <select name="planet" size="1" class="select-planet">
+                    <option selected value="s1">{{ planet.name[0] }}</option>
+                    <option value="s2">Alderaan</option>
+                    <option value="s3">Coruscant</option>
+                </select>
                 <h2>Middle planet</h2>
             </div>
 
@@ -36,10 +40,10 @@
 
         <!-- Calculation section -->
 
-        <section class="calculator">
+        <section class="weather-table">
 
             <form action="#">
-                 <h2 class="calculator-title">Погода</h2>
+                 <h2 class="weather-table-title">Weather</h2>
                  <div class="table-container">
                      <table class="table">
                          <thead>
@@ -57,8 +61,8 @@
                          </tbody>
                      </table>
                  </div>
-                 <div class="calculator-button-container">
-                    <button class="calculator-button">Обновить данные</button>
+                 <div class="weather-button-container">
+                    <button class="weather-button">Refresh data</button>
                  </div>
             </form>
 
