@@ -27,12 +27,15 @@
             <img class="planet-photo" src="{{ url_for('static', filename='img/00.JPG') }}" alt="My photo">
 
             <div class="planet-description">
+
                 <select name="planet" size="1" class="select-planet">
-                    <option selected value="s1">{{ planet.name[0] }}</option>
-                    <option value="s2">Alderaan</option>
-                    <option value="s3">Coruscant</option>
+                    <option selected value="0">{{ planets[0].name }}</option>
+                    {% for item in planets %}
+                    <option value="{{ item.index }}">{{ item.name }}</option>
+                    {% endfor %}
                 </select>
-                <h2>Middle planet</h2>
+                <h2>{{ planets[0].size }}</h2>
+
             </div>
 
         </section>

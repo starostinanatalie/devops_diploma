@@ -4,8 +4,9 @@ from app_frontend import app_frontend
 @app_frontend.route('/')
 @app_frontend.route('/index')
 def index():
-    planet = {'name': ['Tatooine', 'Alderaan', 'Coruscant'],
-              'terrain': ['desert', 'grasslands and mountains', 'cityscape'],
-              'type': ['big planet', 'middle planet', 'small planet']}
+    planet_name = {'name': ['Tatooine', 'Alderaan', 'Coruscant']}
+    planets = [{'name': 'Tatooine', 'size': 'middle planet', 'terrain': 'desert'},
+               {'name': 'Alderaan', 'size': 'large planet', 'terrain': 'grassland, mountains'},
+               {'name': 'Coruscant', 'size': 'large planet', 'terrain': 'cityscape, mountains'}]
 
-    return render_template('index.html', planet = planet)
+    return render_template('index.html', planets=planets)
