@@ -1,7 +1,6 @@
 import requests
+import os
 from datetime import datetime
-
-class Get
 
 # class GetPlanetData():
 #
@@ -35,28 +34,19 @@ class Get
 class Request_Weather():
     pass
 
-city = 'Moscow'
+city = 'moscow'
 date = '2022/04/07'
+api_url = 'https://api.api-ninjas.com/v1/weather?city={}'.format(city)
 
-city_request = requests.get(f'https://www.metaweather.com/api/location/search/?query={city}')
-if city_request.status_code == 200:
-    city_data = city_request.json()
-    city_id = city_data[0]['woeid']
-else:
-    print("Huston, we have a problem")
+SECRET_KEY = os.environ.get('API_KEY')
+print(SECRET_KEY)
 
-raw_data = requests.get(f'https://www.metaweather.com/api/location/{city_id}/{date}')
+raw_data = requests.get(api_url, headers={'X-Api-Key': SECRET_KEY})
 raw_data.raise_for_status()
 if raw_data.status_code == 200:
     data = raw_data.json()
-    id = data[0]['id']
-    weather_state_name = data[0]['weather_state_name']
-    wind_direction_compass = data[0]['wind_direction_compass']
-    created = data[0]['created']
-    applicable_date = data[0]['applicable_date']
-    min_temp = data[0]['min_temp']
-    max_temp = data[0]['max_temp']
-    the_temp = data[0]['the_temp']
-    print(id, weather_state_name, wind_direction_compass, created, applicable_date, max_temp, max_temp, the_temp)
+    print(data)
 else:
     print('Huston, we have a problem!')
+
+
